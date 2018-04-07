@@ -54,4 +54,4 @@ a
 
 *.color15:      #b5d8f6
 URxvt.boldFont:
-URxvt.ScrollBar: False
+URxvt.scrollBar: False
