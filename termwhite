@@ -1,0 +1,55 @@
+
+[options]
+
+#font = Inconsolata for Powerline 10
+font = Anonymice Powerline 8
+
+# Base16 Github
+# Author: Defman21
+
+[colors]
+
+foreground      = #222222
+foreground_bold = #222222
+cursor          = #02021f
+background      = #ffffff
+
+# 16 color space
+
+# Black, Gray, Silver, White
+color0  = #ffffff
+color8  = #969896
+color7  = #ffffff
+color15 = #ffffff
+
+# Red
+color1  = #ee2e24
+color9  = #ee2e24
+
+# Green
+color2  = #00853e
+color10 = #00853e
+
+# Yellow
+color3  = #ffd204
+color11 = #ffd204
+
+# Blue
+color4  = #009ddc
+color12 = #009ddc
+
+# Purple
+color5  = #98005d
+color13 = #98005d
+
+# Teal
+color6  = #85cebc
+color14 = #85cebc
+
+# Extra colors
+color16 = #0086b3
+color17 = #333333
+color18 = #f5f5f5
+color19 = #c8c8fa
+color20 = #e8e8e8
+color21 = #ffffff
