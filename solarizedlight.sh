@@ -4,7 +4,7 @@ cp ~/.Xdefaults ~/repos/dotfiles/Xdefs
 cp ~/.config/termite/config ~/repos/dotfiles/termcache
 
 cp ~/repos/dotfiles/solarized ~/.Xdefaults
-cp ~/repos/dotfiles/termsol ~/.config/termite/config
+cp ~/repos/dotfiles/soltermlight ~/.config/termite/config
 
 sleep 5
 

@@ -1,44 +1,41 @@
 ! special
-*.foreground:   #fcfcfc
-*.background:   #1b1b1b
-*.cursorColor:  #ffffff
+*.foreground:   #93a1a1
+*.background:   #002b36
+*.cursorColor:  #93a1a1
 
 ! black
-*.color0:       #3d3d3d
-*.color8:       #4d4d4d
+*.color0:       #002b36
+*.color8:       #657b83
 
 ! red
-*.color1:       #6673bf
-*.color9:       #899aff
+*.color1:       #dc322f
+*.color9:       #dc322f
 
 ! green
-*.color2:       #3ea290
-*.color10:      #52ad91
+*.color2:       #859900
+*.color10:      #859900
 
 ! yellow
-*.color3:       #b0ead9
-*.color11:      #98c9bb
+*.color3:       #b58900
+*.color11:      #b58900
 
 ! blue
-*.color4:       #31658c
-*.color12:      #477ab3
+*.color4:       #268bd2
+*.color12:      #268bd2
 
 ! magenta
-*.color5:       #596196
-*.color13:      #7882bf
+*.color5:       #6c71c4
+*.color13:      #6c71c4
 
 ! cyan
-*.color6:       #8292b2
-*.color14:      #95a7cc
+*.color6:       #2aa198
+*.color14:      #2aa198
 
 ! white
-*.color7:       #c8cacc
-*.color15:      #edeff2
+*.color7:       #93a1a1
+*.color15:      #fdf6e3
 
-
+URxvt*font: xft:Anonymice Powerline:size=8
 URxvt.boldFont:
 URxvt.scrollBar: False
-
-URxvt*font: xft: Anonymice Powerline: size=8, xft: PowerlineSymbols
-
-xterm*font xft: Anonymice Powerline: size=8
+URxvt.cursorBlink: True
