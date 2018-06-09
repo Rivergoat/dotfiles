@@ -1,0 +1,31 @@
+[options]
+
+font = Anonymice Powerline 8
+
+[colors]
+foreground = #c6c6b9
+#foreground_dim =
+background =#262626
+cursor = rgb(250,210,30)
+
+# if unset, will reverse foreground and background
+#highlight = #839496
+
+# colors from color0 to color254 can be set
+color0 = #262626
+color1 = #cd5c5c
+color2 = #999900
+color3 = #ed8e5e
+color4 = #248f8f
+color5 = #c9acd2
+color6 = #248f8f
+color7 = #c6c6b9
+color8 = #262626
+color9 = #cd5c5c
+color10 = #999900
+color11 = #ed8e5e
+color12 = #248f8f
+color13 = #c9acd2
+color14 = #248f8f
+color15 = #c6c6b9
+

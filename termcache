@@ -8,7 +8,7 @@ font = Anonymice Powerline 8
 foreground      = #586e75
 foreground_bold = #586e75
 cursor          = #111188
-background      = rgba(253, 246, 210,0.7)
+background      = rgba(253, 246, 210,0.8)
 
 # black
 color0  = #002b36

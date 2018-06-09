@@ -12,7 +12,7 @@ font = Anonymice Powerline 8
 foreground      = #fcfcfc
 foreground_bold = #ffffff
 cursor          = #ffffff
-background      = #1b1b1b
+background      = rgba(27,27,27,0.6)
 
 # 16 color space
 
