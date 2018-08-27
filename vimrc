@@ -6,7 +6,7 @@ set number
 set relativenumber
 set nocompatible    " be iMproved, required
 syntax on
-colorscheme default
+colorscheme shblah
 
 set encoding=utf-8
 filetype off                  " required
@@ -30,11 +30,16 @@ Plugin 'majutsushi/tagbar.git'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'xuhdev/vim-latex-live-preview'
-Plugin 'promptline.vim'
+"Plugin 'promptline.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/goyo.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'aradunovic/perun.vim'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'chriskempson/base16-vim'
+Plugin 'tpope/surround.vim'
+Plugin 'w0rp/ale'
 
 call vundle#end()            " required
 autocmd StdinReadPre * let s:std_in=1
@@ -45,10 +50,13 @@ nmap <F8> :TagbarToggle<CR>
 nmap :vertical resize 20:set winfixwidth
 
 let g:livepreview_previewer = 'zathura'
-"let g:livepreview_engine = 'pdflatex'
+let g:livepreview_engine = 'pdflatex'
+let g:livepreview_updatetime = '100'
 
 let g:ycm_server_python_interpreter = '/usr/bin/python'
 let g:ycm_min_num_of_chars_for_completion = 1
+
+let g:ycm_global_ycm_extra_conf = '~/.ycm_conf'
 
 filetype plugin indent on    " required
 
@@ -57,10 +65,14 @@ set shiftwidth=4
 set softtabstop=4
 set smartindent
 
+
+
+
+
 "set laststatus=2
 
 "let g:Powerline_symbols = 'fancy'
-highlight Pmenu ctermfg=0 ctermbg=5 guifg=#0000ff guibg=#0000ff
+highlight Pmenu ctermfg=15 ctermbg=8 guifg=#0000ff guibg=#0000ff
 "set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 "
 
@@ -86,6 +98,7 @@ map <A> w
 map ` <F3>
 
 function Linenum()
+    Goyo
     set number
     set relativenumber
     endfunction
@@ -93,7 +106,9 @@ function Linenum()
 command Ln call Linenum()
 command G Goyo
 set showcmd
-highlight LineNr ctermfg=4 
+"highlight LineNr ctermfg=4 
+highlight Comment ctermfg=8 cterm=italic
+highlight Function ctermfg=4 cterm=italic
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+let g:ale_completion_enabled = 1
+let g:tex_flavor = "latex"

@@ -27,23 +27,40 @@ font pango:monospace 8
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
 
-
-exec compton --blur-kern 7x7box --blur-background
-exec nitrogen --restore
-bindsym Mod1+Shift+f exec chromium 
+exec  compton --config ~/.config/compton/compton.conf
+exec wal -R
+exec mopidy
+#exec compton --blur-kern 7x7box --blur-background
+#exec nitrogen --restore
+bindsym Mod1+Shift+f exec qutebrowser
+#bindsym Mod1+Shift+s exec bash ~/screenshot.sh
 bindsym Mod1+Shift+s exec deepin-screenshot
 
-#this is where the moron started typing
+bindsym Mod1+m bar mode toggle
+bindsym Mod1+x exec i3lock-fancy
+bindsym Mod1+Return exec ~/dotfiles/japdark.sh
+bindsym Mod1+Shift+Return exec ~/dotfiles/japlight.sh
+bindsym Control+Shift+1 exec ~/dotfiles/japdark.sh
 
-gaps inner 20
-gaps outer 0
-smart_gaps on
+exec setxkbmap -option caps:escape
+
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+
+gaps inner 10
+#gaps outer 20
+#smart_gaps on
 default_border none
 
-#new_window pixel 3
-new_window none
+#new_window pixel 5
+new_window pixel 0
 
-bindsym Mod1+Shift+a arduino
+##new_window none
 
 #this is where I stopped
 
@@ -56,13 +73,15 @@ set $right semicolon
 floating_modifier Mod1
 
 # start a terminal
-bindsym Mod1+Return exec termite
-
+#bindsym Mod1+Return exec urxvt
+bindsym Mod1+n exec bash urxvt -e ranger /home/fox/Pictures/Wallpapers/
 # kill focused window
 bindsym Mod1+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym Mod1+d exec dmenu_run
+#bindsym Mod1+d exec dmenu_run
+bindsym Mod1+d exec bash ~/dmen.sh
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -184,11 +203,49 @@ bindsym Mod1+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
+
+set $transparent #0000005a
+
+set_from_resource $white i3wm.color7 #f0f0f0
+set_from_resource $green i3wm.color2 #f0f0f0
+set_from_resource $black i3wm.color0 #f0f0f0
+set_from_resource $red   i3wm.color1 #f0f0f0
+set_from_resource $yellow i3wm.color3 #f0f0f0
+set_from_resource $blue  i3wm.color4 #f0f0f0
+set_from_resource $magenta i3wm.color5 #f0f0f0
+set_from_resource $cyan i3wm.color6 #f0f0f0
+
+
+set_from_resource $foreground i3wm.foreground #f0f0f0
+set_from_resource $background i3wm.background #f0f0f0
+
+#way of the world
+
 bar {
         status_command i3status
+        i3bar_command i3bar -t
         position top
+        colors {
+        #background $white
+        background $background
+
+        #statusline
+        # and the rest
+        
+        #                  border  backgr. text
+        focused_workspace  $cyan   $cyan   $white
+        active_workspace   $foreground $foreground $background
+        inactive_workspace $background  $background $foreground
+        urgent_workspace   $red    $red    $white
+    }
 }
 
+# class                 border  backgr. text    indicator
+client.focused          #ff0000 #ff0000 #ff0000 #ff0000
+client.focused_inactive #ff0000 #ff0000 #ff0000 #ff0000
+client.unfocused        #ff0000 #ff0000 #ff0000 #ff0000
+client.urgent           #ff0000 #ff0000 #ff0000 #ff0000
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
