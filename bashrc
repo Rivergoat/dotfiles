@@ -1,68 +1,46 @@
-#
-# /etc/bash.bashrc
-#
+# .bashrc
+# Import the colors.
+. "${HOME}/.cache/wal/colors.sh"
+
+# Create the alias.
+alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-[[ $DISPLAY ]] && shopt -s checkwinsize
-
-
-fortune  -o | cowsay
-export PS1="\\$ - \w -> \[$(tput sgr0)\]"
-
-#export PS1="■──┬──┤\u├───┤\t│ \n   │\n   └┤\w├──┤\$?│  "
-\$?
-#┬ · ─  ■  ┤ ├ └ ■ ▶
-
-function _update_ps1() {
-    PS1=$(powerline-shell $?)
-}
-
-if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
-    source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
-fi
-
-## Colorize the ls output ##
-
+alias inst='sudo xbps-install -S'
+alias delt='sudo xbps-remove -R'
+alias srch='sudo xbps-query -Rs'
 alias ls='ls --color=auto'
-
-alias wetter="curl wttr.in/wedel"
-
-alias sscrot='scrot ~/memeshots/%b%d::%H%M%S.png'
-
-alias clock='cd ~/repos/tty-clock/ && ./tty-clock && cd'
-alias feh='feh --geometry 1024x768'
-
-## Use a long listing format ##
 alias ll='ls -la'
+alias wp='ranger ~/Pictures/Wallpapers'
+alias rn='ranger'
+alias feh='feh --scale-down --auto-zoom'
+alias bedit='vim ~/.bashrc'
+alias ttefc='cd ~/repos/ttef/ttefc/'
+alias ufetch='bash /usr/share/ufetch-void'
+alias cs='cowsay'
+alias v='vim'
+alias cm='cd ..'
 
-## Show hidden files ##
-alias l.='ls -d .* --color=auto'
+PS1='[\u@\h \W]\$ '
+#export PS1="\u::\w ->\[$(tput sgr0)\]"
 
-alias f="firefox"
+#export PS1="\[\033[38;5;220m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]>\[$(tput sgr0)\]\[\033[38;5;202m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]> \[$(tput sgr0)\]"
+#
+#export PS1="\[\033[38;5;221m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]>>\[$(tput sgr0)\]\[\033[38;5;136m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]>> \[$(tput sgr0)\]"
+#export PS1="\[\033[38;5;219m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] > \[$(tput sgr0)\]"
 
-alias ttef="cd repos/ttef/ttefc"
+#export PS1="\w > \[$(tput sgr0)\]"
 
-alias white="bash ~/repos/dotfiles/white.sh"
-alias sol="bash ~/repos/dotfiles/solarized.sh"
-alias sollight="bash ~/repos/dotfiles/solarizedlight.sh"
-alias neofetch="neofetch --loop --backend w3m --w3m ~/Pictures/wallpapers/sun.jpg"
-alias tetris="cd ~/repos/Tetris && ./Tetris && cd"
+export PS1="\w λ \[$(tput sgr0)\]"
+#export PS1="\w 卍 \[$(tput sgr0)\]"
+export PS1="\W \[$(tput sgr0)\]\[\033[38;5;1m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+export PS1="\W \[$(tput sgr0)\]\[\033[38;5;5m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
-##
-case ${TERM} in
-  xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
-    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+export PS1="\W \[$(tput sgr0)\]\[\033[38;5;202m\]>>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
-    ;;
-  screen*)
-    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
-    ;;
-esac
-
-
-[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
-##LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
-
-LS_COLORS=$LS_COLORS:'di=1;33:' ; export LS_COLORS
+export PS1="\[\033[38;5;244m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;202m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
