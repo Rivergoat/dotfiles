@@ -1,0 +1,6 @@
+network={
+   ssid="WLAN-HHXEAS"
+   psk="5670080267576571"
+   proto=RSN
+   key_mgmt=WPA-PSK
+}
